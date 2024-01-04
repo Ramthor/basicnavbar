@@ -1,30 +1,19 @@
 import React from "react";
+import WatchNow from "./component/WatchNow";
+import Movies from "./component/Movies";
+import Navbar from "./component/Navbar";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
     <>
-      <nav className="nav">
-        <ul className="nav__list">
-          <li className="nav__list-items">
-            <a href="#watch-now">Watch Now</a>
-          </li>
-          <li className="nav__list-items">
-            <a href="#movies">Movies</a>
-          </li>
-          <li className="nav__list-items">
-            <a href="#tv-shows">TV Shows</a>
-          </li>
-          <li className="nav__list-items">
-            <a href="#sports">Sports</a>
-          </li>
-          <li className="nav__list-items">
-            <a href="#kids">Kids</a>
-          </li>
-          <li className="nav__list-items">
-            <a href="#library">Library</a>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/WatchNow" element={<WatchNow />} />
+          <Route path="/Movies" element={<Movies />} />
+        </Routes>
+      </div>
     </>
   );
 };
